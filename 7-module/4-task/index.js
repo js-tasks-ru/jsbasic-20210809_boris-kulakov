@@ -66,7 +66,8 @@ export default class StepSlider {
     this._thumb.style.left = `${leftPercents}%`;
     this._progress.style.width = `${leftPercents}%`;
 
-    this._segments.children[ this._closestValue ].classList.add('slider__step-active');
+    if (this._segments.children[ this._closestValue ])
+      this._segments.children[ this._closestValue ].classList.add('slider__step-active');
     
     if ( this._currentValue.textContent != this._closestValue ) {
       this._currentValue.textContent = this._closestValue;
